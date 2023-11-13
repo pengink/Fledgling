@@ -36,8 +36,9 @@ func get_vector_x():
 	return Input.get_action_raw_strength("Right") - Input.get_action_raw_strength("Left") # get movement on x axis
 
 func jump(jump_power): # set movement to jump
-	print("jump")
-	velocity.y = jump_power
+	if is_on_floor():
+		print("jump")
+		velocity.y = jump_power
 
 func _on_Timer_timeout(): # when jump button is held for too long 
 	jump(-max_jump_power) # jumps and reset timer
