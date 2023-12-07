@@ -17,7 +17,7 @@ func _physics_process(delta):
 	if !is_on_floor():
 		velocity.y += GRAVITY
 		if gliding == true:
-			velocity.y = velocity.dot(Vector2.DOWN)/90
+			velocity.y = 150
 			
 	move_and_slide(velocity, Vector2.UP) # applies overall movement
 	
