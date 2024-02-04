@@ -5,7 +5,9 @@ var velocity : Vector2
 var jumped : bool = false
 var gliding : bool = false
 
-export var max_jump_power : int = 900
+onready var collider = $Area2D
+
+export var max_jump_power : int = 700
 
 export var speed : int = 600
 var GRAVITY : float = 19.8
@@ -15,7 +17,7 @@ var glideOffset : int = 40
 func _physics_process(delta):
 	
 	if !is_on_floor():
-		velocity.y += GRAVITY
+		velocity.y += GRAVITY;
 		if gliding == true:
 			velocity.y = 150
 			
@@ -50,3 +52,14 @@ func glide():
 			gliding = false
 		false:
 			gliding = true
+
+
+func bodyEntered(body):
+	pass
+	if body.is_in_group("pickup"):
+		pickup(body)
+		
+func pickup(item):
+	pass
+	item.get_parent().remove_child(item)
+	print("krill")
