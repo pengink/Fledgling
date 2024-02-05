@@ -152,5 +152,3 @@ scale = Vector2( 4, 4 )
 z_index = -2
 z_as_relative = false
 texture = ExtResource( 1 )
-
-[connection signal="tree_entered" from="Player" to="CanvasLayer/UI" method="_on_Player_tree_entered"]
