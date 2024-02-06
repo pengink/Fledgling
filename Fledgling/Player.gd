@@ -7,34 +7,38 @@ var gliding : bool = false
 
 onready var collider = $Area2D
 
-export var max_jump_power : int = 700
+export var jump_height : float = 100.0
+export var time_to_peak : float = 3.0
+export var time_to_descent : float = 5.0
 
-export var speed : int = 600
-var GRAVITY : float = 19.8
+onready var jump_velocity : float = ((-2.0 * jump_height) / time_to_peak) 
+onready var jump_gravity : float = ((2.0 * jump_height) / (time_to_peak * time_to_peak)) 
+onready var fall_gravity : float = ((2.0 * jump_height) / (time_to_descent * time_to_descent)) 
+
+export var speed : int = 700
 var glideOffset : int = 40
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	
-	if !is_on_floor():
-		velocity.y += GRAVITY;
-		if gliding == true:
-			velocity.y = 150
-			
-	move_and_slide(velocity, Vector2.UP) # applies overall movement
-	
-	
-func _input(event):
-	
-	velocity.x = get_vector_x() * speed # set left-right movement with speed
+func _process(delta):
+	print(get_gravity())
+	velocity.x = get_vector_x() * speed
+	if gliding != true:
+		velocity.y += get_gravity() * delta
 	
 	if Input.is_action_just_pressed("Jump"): 
-		if is_on_floor():# starts calculating time for jump power
+		if is_on_floor():
 			jumped = true
 			jump()
 		else:
 			glide()
-			
+
+	if gliding == true and get_vector_x() != 0:
+		if get_gravity() == fall_gravity:
+			velocity.y += (fall_gravity / 6) * delta # WHY
+		
+	move_and_slide(velocity, Vector2.UP) # applies overall movement
+	
+func _input(event):
 	if is_on_floor(): 
 		jumped = false
 		gliding = false
@@ -42,17 +46,19 @@ func _input(event):
 func get_vector_x():
 	return Input.get_action_raw_strength("Right") - Input.get_action_raw_strength("Left") # get movement on x axis
 
+func get_gravity() -> float:
+	return jump_gravity if velocity.y < 0.0 else fall_gravity
+	
 func jump(): # set movement to jump
 		print("jump")
-		velocity.y = -max_jump_power
-
+		velocity.y = jump_velocity
+		
 func glide():
 	match gliding:
 		true:
 			gliding = false
 		false:
 			gliding = true
-
 
 func bodyEntered(body):
 	pass
