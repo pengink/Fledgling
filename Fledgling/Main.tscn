@@ -70,6 +70,13 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI/Hotbar"]
+margin_left = 72.0
+margin_top = -3.0
+margin_right = 112.0
+margin_bottom = 37.0
+rect_scale = Vector2( 1.75, 1.75 )
+
 [node name="Slot1" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
 margin_left = 75.0
 margin_right = 3275.0
@@ -110,6 +117,7 @@ scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+time_to_descent = 0.4
 
 [node name="Control" type="Control" parent="."]
 visible = false
