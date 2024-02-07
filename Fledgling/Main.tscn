@@ -63,49 +63,47 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -225.0
 margin_top = -225.0
-margin_right = -25.0
-margin_bottom = -25.0
+margin_right = -10.0
+margin_bottom = -10.0
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI/Hotbar"]
-margin_left = 72.0
-margin_top = -3.0
-margin_right = 112.0
-margin_bottom = 37.0
-rect_scale = Vector2( 1.75, 1.75 )
 
 [node name="Slot1" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
-margin_left = 75.0
-margin_right = 3275.0
+margin_right = 3200.0
 margin_bottom = 3200.0
 rect_scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 4 )
 
 [node name="Slot2" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
-margin_left = 150.0
-margin_top = 75.0
-margin_right = 3350.0
-margin_bottom = 3275.0
+margin_right = 3200.0
+margin_bottom = 3200.0
 rect_scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 4 )
 
 [node name="Slot3" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
-margin_left = 75.0
-margin_top = 150.0
-margin_right = 3275.0
-margin_bottom = 3350.0
+margin_right = 3200.0
+margin_bottom = 3200.0
 rect_scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 4 )
 
 [node name="Slot4" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
-margin_top = 75.0
 margin_right = 3200.0
-margin_bottom = 3275.0
+margin_bottom = 3200.0
 rect_scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 4 )
+
+[node name="Pivot" type="Node2D" parent="CanvasLayer/UI/Hotbar"]
+
+[node name="Point1" type="Node2D" parent="CanvasLayer/UI/Hotbar/Pivot"]
+position = Vector2( 0, -100 )
+
+[node name="Point2" type="Node2D" parent="CanvasLayer/UI/Hotbar/Pivot"]
+position = Vector2( 100, 0 )
+
+[node name="Point3" type="Node2D" parent="CanvasLayer/UI/Hotbar/Pivot"]
+position = Vector2( 0, 100 )
+
+[node name="Point4" type="Node2D" parent="CanvasLayer/UI/Hotbar/Pivot"]
+position = Vector2( -100, 0 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2( 380, 70 )
