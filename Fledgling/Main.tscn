@@ -67,43 +67,41 @@ margin_right = -10.0
 margin_bottom = -10.0
 script = ExtResource( 6 )
 
+[node name="Select" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
+margin_left = -7.0
+margin_top = -107.0
+margin_right = 3193.0
+margin_bottom = 3093.0
+rect_scale = Vector2( 0.025, 0.025 )
+texture = ExtResource( 4 )
+
 [node name="Slot1" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
+margin_top = -100.0
 margin_right = 3200.0
-margin_bottom = 3200.0
+margin_bottom = 3100.0
 rect_scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 4 )
 
 [node name="Slot2" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
-margin_right = 3200.0
+margin_left = 100.0
+margin_right = 3300.0
 margin_bottom = 3200.0
 rect_scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 4 )
 
 [node name="Slot3" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
+margin_top = 100.0
 margin_right = 3200.0
-margin_bottom = 3200.0
+margin_bottom = 3300.0
 rect_scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 4 )
 
 [node name="Slot4" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
-margin_right = 3200.0
+margin_left = -100.0
+margin_right = 3100.0
 margin_bottom = 3200.0
 rect_scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 4 )
-
-[node name="Pivot" type="Node2D" parent="CanvasLayer/UI/Hotbar"]
-
-[node name="Point1" type="Node2D" parent="CanvasLayer/UI/Hotbar/Pivot"]
-position = Vector2( 0, -100 )
-
-[node name="Point2" type="Node2D" parent="CanvasLayer/UI/Hotbar/Pivot"]
-position = Vector2( 100, 0 )
-
-[node name="Point3" type="Node2D" parent="CanvasLayer/UI/Hotbar/Pivot"]
-position = Vector2( 0, 100 )
-
-[node name="Point4" type="Node2D" parent="CanvasLayer/UI/Hotbar/Pivot"]
-position = Vector2( -100, 0 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2( 380, 70 )
