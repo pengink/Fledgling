@@ -60,10 +60,10 @@ func glide():
 		false:
 			gliding = true
 
-func bodyEntered(body):
+func areaEntered(area):
 	pass
-	if body.is_in_group("pickup"):
-		pickup(body)
+	if area.is_in_group("Coin"):
+		print("coin")
 		
 func pickup(item):
 	pass

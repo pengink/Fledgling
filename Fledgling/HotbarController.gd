@@ -23,7 +23,6 @@ func _input(event):
 func get_range():
 	for i in 4:
 		if scroll_index >= difference*i and scroll_index < difference*i + 1:
-			print(item)
 			item = i
 			#select.rect_position = get_node("Slot" + str(item + 1)).rect_position
 			select.rect_position.x = get_node("Slot" + str(item + 1)).rect_position.x - 7
