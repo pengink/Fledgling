@@ -6,6 +6,7 @@ var jumped : bool = false
 var gliding : bool = false
 
 onready var collider = $Area2D
+onready var animatedSprite = get_node("AnimatedSprite")
 
 export var jump_height : float = 100.0
 export var time_to_peak : float = 3.0
@@ -42,6 +43,10 @@ func _input(event):
 	if is_on_floor(): 
 		jumped = false
 		gliding = false
+	if get_vector_x() > 0:
+		animatedSprite.flip_h = true
+	elif get_vector_x() < 0:
+		animatedSprite.flip_h = false
 		
 func get_vector_x():
 	return Input.get_action_raw_strength("Right") - Input.get_action_raw_strength("Left") # get movement on x axis

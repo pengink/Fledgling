@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grassmid.png-83e774c98e2612e7f9916d120f9b9554.stex"
+path="res://.import/birdguy.png-7129042dc577371882d092bef43b3201.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetFledgling/grassmid.png"
-dest_files=[ "res://.import/grassmid.png-83e774c98e2612e7f9916d120f9b9554.stex" ]
+source_file="res://Tileset/birdguy.png"
+dest_files=[ "res://.import/birdguy.png-7129042dc577371882d092bef43b3201.stex" ]
 
 [params]
 

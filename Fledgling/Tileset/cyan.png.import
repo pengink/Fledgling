@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sky.png-62dc0c8df5111d2a8ec6d4565b2b60cf.stex"
+path="res://.import/cyan.png-f96cf733c863ec3145207336bf98c88a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetFledgling/sky.png"
-dest_files=[ "res://.import/sky.png-62dc0c8df5111d2a8ec6d4565b2b60cf.stex" ]
+source_file="res://Tileset/cyan.png"
+dest_files=[ "res://.import/cyan.png-f96cf733c863ec3145207336bf98c88a.stex" ]
 
 [params]
 

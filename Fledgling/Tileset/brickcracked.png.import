@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bluecorner.png-f35fc746767c50ae479e5497b5009e08.stex"
+path="res://.import/brickcracked.png-ea2aa5eca2ed251937e9eda1f031fdde.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetFledgling/bluecorner.png"
-dest_files=[ "res://.import/bluecorner.png-f35fc746767c50ae479e5497b5009e08.stex" ]
+source_file="res://Tileset/brickcracked.png"
+dest_files=[ "res://.import/brickcracked.png-ea2aa5eca2ed251937e9eda1f031fdde.stex" ]
 
 [params]
 

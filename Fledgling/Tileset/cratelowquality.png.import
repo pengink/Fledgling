@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/brick.png-e45362f104a222b551a6fa653fbf579c.stex"
+path="res://.import/cratelowquality.png-8be8fbe9646b49cbab48f5b2230e1ef6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetFledgling/brick.png"
-dest_files=[ "res://.import/brick.png-e45362f104a222b551a6fa653fbf579c.stex" ]
+source_file="res://Tileset/cratelowquality.png"
+dest_files=[ "res://.import/cratelowquality.png-8be8fbe9646b49cbab48f5b2230e1ef6.stex" ]
 
 [params]
 

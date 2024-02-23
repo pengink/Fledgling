@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blueside.png-4c0e28aa9455063593ca58fc375ee02c.stex"
+path="res://.import/purpleside.png-0c2c24a9375c79a6ce2e8c3526d4ade0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetFledgling/blueside.png"
-dest_files=[ "res://.import/blueside.png-4c0e28aa9455063593ca58fc375ee02c.stex" ]
+source_file="res://Tileset/purpleside.png"
+dest_files=[ "res://.import/purpleside.png-0c2c24a9375c79a6ce2e8c3526d4ade0.stex" ]
 
 [params]
 

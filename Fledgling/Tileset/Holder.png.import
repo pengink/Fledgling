@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/purple.png-68b3db31917bc75989d337fbf508fb78.stex"
+path="res://.import/Holder.png-2fd51ad370550346f92baeed8e2eb193.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetFledgling/purple.png"
-dest_files=[ "res://.import/purple.png-68b3db31917bc75989d337fbf508fb78.stex" ]
+source_file="res://Tileset/Holder.png"
+dest_files=[ "res://.import/Holder.png-2fd51ad370550346f92baeed8e2eb193.stex" ]
 
 [params]
 

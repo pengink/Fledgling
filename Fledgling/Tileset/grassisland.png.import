@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cratelowquality.png-fcec72a35e41790b0daff2d69815078b.stex"
+path="res://.import/grassisland.png-974cae82d9dfc5d7e766a86000dd7d83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetFledgling/cratelowquality.png"
-dest_files=[ "res://.import/cratelowquality.png-fcec72a35e41790b0daff2d69815078b.stex" ]
+source_file="res://Tileset/grassisland.png"
+dest_files=[ "res://.import/grassisland.png-974cae82d9dfc5d7e766a86000dd7d83.stex" ]
 
 [params]
 

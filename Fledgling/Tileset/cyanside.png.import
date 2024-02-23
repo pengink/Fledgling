@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grassend.png-366b3e7309629402cc3a231783c57b01.stex"
+path="res://.import/cyanside.png-6e331b5779dd096c7a3409c2a99e702d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetFledgling/grassend.png"
-dest_files=[ "res://.import/grassend.png-366b3e7309629402cc3a231783c57b01.stex" ]
+source_file="res://Tileset/cyanside.png"
+dest_files=[ "res://.import/cyanside.png-6e331b5779dd096c7a3409c2a99e702d.stex" ]
 
 [params]
 

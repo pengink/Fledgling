@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/purplecorner.png-cfbdb0ae59b4b791193f4dc154190802.stex"
+path="res://.import/output-onlinepngtools.png-a9d4efd30c426b37d61934b5f0ebb309.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetFledgling/purplecorner.png"
-dest_files=[ "res://.import/purplecorner.png-cfbdb0ae59b4b791193f4dc154190802.stex" ]
+source_file="res://Tileset/output-onlinepngtools.png"
+dest_files=[ "res://.import/output-onlinepngtools.png-a9d4efd30c426b37d61934b5f0ebb309.stex" ]
 
 [params]
 

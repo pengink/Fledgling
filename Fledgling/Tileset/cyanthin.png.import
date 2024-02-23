@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cyanthinend.png-0b33c7215c896c9bad74b01a9d1ff979.stex"
+path="res://.import/cyanthin.png-6487dee186dce0a17643e34f9e9284e3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetFledgling/cyanthinend.png"
-dest_files=[ "res://.import/cyanthinend.png-0b33c7215c896c9bad74b01a9d1ff979.stex" ]
+source_file="res://Tileset/cyanthin.png"
+dest_files=[ "res://.import/cyanthin.png-6487dee186dce0a17643e34f9e9284e3.stex" ]
 
 [params]
 
