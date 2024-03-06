@@ -1,7 +1,5 @@
-extends Resource
+extends Node2D
 
 
-export var name : String
-
-func _init(p_name = "ItemName"):
-	name = p_name
+func _ready():
+	pass

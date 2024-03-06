@@ -49,6 +49,7 @@ nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
 shader = SubResource( 3 )
 
 [node name="Main" type="Node2D"]
+position = Vector2( 80, 0 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5

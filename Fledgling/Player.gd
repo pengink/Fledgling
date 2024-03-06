@@ -5,6 +5,9 @@ var velocity : Vector2
 var jumped : bool = false
 var gliding : bool = false
 
+var state = ["idle", "walking", "jumping", "gliding"]
+export var currentState = "walking"
+
 onready var collider = $Area2D
 onready var animatedSprite = get_node("AnimatedSprite")
 
@@ -31,18 +34,28 @@ func _process(delta):
 		else:
 			glide()
 			
-	if gliding == false or  get_vector_x() == 0:
+	if is_on_floor(): 
+		currentState = "walking" # rtk
+			
+	if gliding == false or get_vector_x() == 0:
 		velocity.y += get_gravity() * delta
+		if get_gravity() == jump_gravity:
+			currentState = "Jumping"
 
 	if gliding == true and get_vector_x() != 0:
-			velocity.y = lerp(velocity.y, glide_velocity, delta * glide_weight) # WHY
+		velocity.y = lerp(velocity.y, glide_velocity, delta * glide_weight) # WHY
 		
 	move_and_slide(velocity, Vector2.UP) # applies overall movement
+	animation()
+	
 	
 func _input(event):
 	if is_on_floor(): 
 		jumped = false
 		gliding = false
+		currentState = "walking" # rtk
+		if get_vector_x() != 0:
+			currentState = "walking"
 	if get_vector_x() > 0:
 		animatedSprite.flip_h = true
 	elif get_vector_x() < 0:
@@ -56,6 +69,7 @@ func get_gravity() -> float:
 	
 func jump(): # set movement to jump
 		print("jump")
+		currentState = "Jumping"
 		velocity.y = jump_velocity
 		
 func glide():
@@ -64,6 +78,7 @@ func glide():
 			gliding = false
 		false:
 			gliding = true
+			currentState = "GLIDING"
 
 func areaEntered(area):
 	pass
@@ -74,3 +89,16 @@ func pickup(item):
 	pass
 	item.get_parent().remove_child(item)
 	print("krill")
+
+func animation():
+	match currentState:
+		"GLIDING":
+			animatedSprite.play("GLIDING")
+			animatedSprite.set_scale(Vector2(1, 1))
+		"walking":
+			animatedSprite.play("Jumping")
+			animatedSprite.set_scale(Vector2(1, 1))
+		"Jumping":
+			animatedSprite.play("Jumping")
+			animatedSprite.set_scale(Vector2(1, 1))
+	
