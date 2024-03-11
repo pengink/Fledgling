@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Tileset/birdguy.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://items.gd" type="Script" id=5]
 [ext_resource path="res://Tileset/JUMPING.png" type="Texture" id=6]
 [ext_resource path="res://Tileset/GLIDING.png" type="Texture" id=7]
+[ext_resource path="res://Tileset/birdIdleSheet.png" type="Texture" id=8]
+
+[sub_resource type="OccluderPolygon2D" id=26]
+polygon = PoolVector2Array( -2000, -500, 2000, -500, 2000, 500, -2000, 500 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 7 )
@@ -56,6 +60,41 @@ region = Rect2( 340, 0, 85, 85 )
 atlas = ExtResource( 6 )
 region = Rect2( 425, 0, 85, 85 )
 
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 500, 500 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 500, 0, 500, 500 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 500, 500, 500 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 500, 500, 500, 500 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 64, 0, 32, 32 )
+
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 960, 960 )
@@ -80,26 +119,6 @@ region = Rect2( 3840, 0, 960, 960 )
 atlas = ExtResource( 3 )
 region = Rect2( 4800, 0, 960, 960 )
 
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 500, 500 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 500, 0, 500, 500 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 500, 500, 500 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 500, 500, 500, 500 )
-
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
@@ -112,15 +131,20 @@ animations = [ {
 "name": "Jumping",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
-"loop": true,
-"name": "Walking",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "running",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -139,9 +163,12 @@ smoothing_enabled = true
 smoothing_speed = 3.0
 offset_v = -1.0
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Camera2D"]
+occluder = SubResource( 26 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
-animation = "Jumping"
+animation = "idle"
 frame = 1
 playing = true
 
