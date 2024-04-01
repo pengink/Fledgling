@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Grassmid.png-66641a395681b1d15e52e199808ecded.stex"
+path="res://.import/cyancorner.png-2092c568d1f19fd2cbe1c1295f9b8350.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tileset/Grassmid.png"
-dest_files=[ "res://.import/Grassmid.png-66641a395681b1d15e52e199808ecded.stex" ]
+source_file="res://TilesetFledgling/cyancorner.png"
+dest_files=[ "res://.import/cyancorner.png-2092c568d1f19fd2cbe1c1295f9b8350.stex" ]
 
 [params]
 
