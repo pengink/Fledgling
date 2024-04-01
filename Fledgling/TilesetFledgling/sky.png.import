@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_sheet_128px_by_128px.png-37767807168c9f4c81b3dee4766a1c12.stex"
+path="res://.import/sky.png-62dc0c8df5111d2a8ec6d4565b2b60cf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tileset/tile_sheet_128px_by_128px.png"
-dest_files=[ "res://.import/tile_sheet_128px_by_128px.png-37767807168c9f4c81b3dee4766a1c12.stex" ]
+source_file="res://TilesetFledgling/sky.png"
+dest_files=[ "res://.import/sky.png-62dc0c8df5111d2a8ec6d4565b2b60cf.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

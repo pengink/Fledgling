@@ -1,8 +1,7 @@
 extends Container
 
+onready var select = get_node("Select")
 export var difference : int = 5
-onready var holderTexture = load("res://Tileset/Holder.png")
-onready var selectedTexture = load("res://Tileset/output-onlinepngtools.png")
 var camera : Camera2D
 var scroll_index : int = 0
 var item = 0
@@ -22,20 +21,16 @@ func _input(event):
 
 	
 func get_range():
-	for i in 4: # GRAAAAAAHHHHHHHHH
+	for i in 4:
 		if scroll_index >= difference*i and scroll_index < difference*i + 1:
-			get_child(i).texture = selectedTexture;
-			#get_child(i).set_scale(Vector2(0.5, 0.5));
-			item = i;
-			print(item)
-		elif i != item:
-			get_child(i).texture = holderTexture;
+			item = i
+			#select.rect_position = get_node("Slot" + str(item + 1)).rect_position
+			select.rect_position.x = get_node("Slot" + str(item + 1)).rect_position.x - 7
+			select.rect_position.y = get_node("Slot" + str(item + 1)).rect_position.y - 7
 			
 func selector():
 	pass
-	# if this then change item you know you get?
+	
 	
 
 	
-# According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off 
-# hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh try to stay awake WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP WAKE UP
