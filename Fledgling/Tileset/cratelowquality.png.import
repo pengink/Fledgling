@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grassmid.png-a1bdf9dfa081343c9b98827ecc0443d8.stex"
+path="res://.import/cratelowquality.png-8be8fbe9646b49cbab48f5b2230e1ef6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tileset/grassmid.png"
-dest_files=[ "res://.import/grassmid.png-a1bdf9dfa081343c9b98827ecc0443d8.stex" ]
+source_file="res://Tileset/cratelowquality.png"
+dest_files=[ "res://.import/cratelowquality.png-8be8fbe9646b49cbab48f5b2230e1ef6.stex" ]
 
 [params]
 

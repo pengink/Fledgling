@@ -1,7 +1,64 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=37 format=2]
 
-[ext_resource path="res://TilesetFledgling/birdguy.png" type="Texture" id=1]
+[ext_resource path="res://Tileset/birdguy.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Tileset/birdWalkSheet.png" type="Texture" id=3]
+[ext_resource path="res://Projectile.tscn" type="PackedScene" id=4]
+[ext_resource path="res://items.gd" type="Script" id=5]
+[ext_resource path="res://Tileset/JUMPING.png" type="Texture" id=6]
+[ext_resource path="res://Tileset/GLIDING.png" type="Texture" id=7]
+[ext_resource path="res://Tileset/birdIdleSheet.png" type="Texture" id=8]
+
+[sub_resource type="OccluderPolygon2D" id=26]
+polygon = PoolVector2Array( -2000, -500, 2000, -500, 2000, 500, -2000, 500 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 85, 85 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 7 )
+region = Rect2( 85, 0, 85, 85 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 7 )
+region = Rect2( 170, 0, 85, 85 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 7 )
+region = Rect2( 255, 0, 85, 85 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 7 )
+region = Rect2( 340, 0, 85, 85 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 7 )
+region = Rect2( 425, 0, 85, 85 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 85, 85 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 6 )
+region = Rect2( 85, 0, 85, 85 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 6 )
+region = Rect2( 170, 0, 85, 85 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 6 )
+region = Rect2( 255, 0, 85, 85 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 6 )
+region = Rect2( 340, 0, 85, 85 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 6 )
+region = Rect2( 425, 0, 85, 85 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
@@ -23,12 +80,71 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 500, 500, 500, 500 )
 
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 960, 960 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 960, 0, 960, 960 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 1920, 0, 960, 960 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 2880, 0, 960, 960 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 3840, 0, 960, 960 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 4800, 0, 960, 960 )
+
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": true,
+"name": "GLIDING",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "Jumping",
+"speed": 10.0
+}, {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "running",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -47,14 +163,17 @@ smoothing_enabled = true
 smoothing_speed = 3.0
 offset_v = -1.0
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Camera2D"]
+occluder = SubResource( 26 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.19, 0.19 )
 frames = SubResource( 7 )
-frame = 3
+animation = "idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 3, 3 )
+scale = Vector2( 5, 5 )
 shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -62,5 +181,10 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2( 6, 6 )
 shape = SubResource( 2 )
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="Icecream" parent="Node2D" instance=ExtResource( 4 )]
 
 [connection signal="area_entered" from="Area2D" to="." method="areaEntered"]
