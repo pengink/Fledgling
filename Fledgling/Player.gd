@@ -5,8 +5,10 @@ var velocity : Vector2
 var jumped : bool = false
 var gliding : bool = false
 
-var state = ["idle", "running", "jumping", "gliding"]
+var state = ["idle", "running", "jumping", "gliding", "falling"]
 export var currentState = "idle"
+
+export var health : int = 5
 
 onready var collider = $Area2D
 onready var animatedSprite = get_node("AnimatedSprite")
@@ -36,14 +38,13 @@ func _process(delta):
 			
 	if gliding == false or get_vector_x() == 0:
 		velocity.y += get_gravity() * delta
-		if get_gravity() == jump_gravity:
-			currentState = "Jumping"
 
 	if gliding == true and get_vector_x() != 0:
 		velocity.y = lerp(velocity.y, glide_velocity, delta * glide_weight) # WHY
 		
 	move_and_slide(velocity, Vector2.UP) # applies overall movement
 	animationState()
+	print(self.velocity.y)
 
 	
 	
@@ -90,10 +91,14 @@ func animationState():
 		elif get_vector_x() != 0:
 			currentState = "running"
 	else:
-		if jumped == true && gliding == false:
-			currentState = "jumping"
-		elif gliding == true:
-			currentState = "GLIDING"
+		if jumped == true:
+			match get_gravity():
+				jump_gravity:
+					currentState = "jumping"
+			if gliding == true:
+				currentState = "GLIDING"
+			elif get_gravity() <= fall_gravity:
+					currentState = "falling" # ANIMATIONN
 			
 	animation()
 
@@ -104,11 +109,19 @@ func animation():
 			animatedSprite.set_scale(Vector2(1, 1))
 		"running":
 			animatedSprite.play("running")
-			animatedSprite.set_scale(Vector2(0.1, 0.1))
+			animatedSprite.set_scale(Vector2(3, 3))
 		"jumping":
 			animatedSprite.play("Jumping")
 			animatedSprite.set_scale(Vector2(1, 1))
+		"falling":
+			animatedSprite.play("falling")
+			animatedSprite.set_scale(Vector2(3, 3))
 		"idle":
-			animatedSprite.play("Jumping")
-			animatedSprite.set_scale(Vector2(1, 1))
+			animatedSprite.play("idle")
+			animatedSprite.set_scale(Vector2(3, 3))
+			
+func attacked(points):
+	pass
+	health -= points;
+	
 	
