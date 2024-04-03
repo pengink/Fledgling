@@ -123,8 +123,6 @@ shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 30, -160 )
-jump_height = 125.0
-time_to_descent = 0.4
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0

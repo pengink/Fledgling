@@ -14,10 +14,10 @@ onready var collider = $Area2D
 onready var animatedSprite = get_node("AnimatedSprite")
 
 export var jump_height : float = 100.0
-export var time_to_peak : float = 3.0
-export var time_to_descent : float = 5.0
+export var time_to_peak : float = 0.5
+export var time_to_descent : float = 1.0
 export var glide_weight : float = 8.0
-export var glide_velocity : float = 200.0
+export var glide_velocity : float = 50.0
 
 onready var jump_velocity : float = ((-2.0 * jump_height) / time_to_peak) 
 onready var jump_gravity : float = ((2.0 * jump_height) / (time_to_peak * time_to_peak)) 
@@ -36,11 +36,10 @@ func _process(delta):
 		else:
 			glide()
 			
-	if gliding == false or get_vector_x() == 0:
-		velocity.y += get_gravity() * delta
-
-	if gliding == true and get_vector_x() != 0:
+	if gliding:
 		velocity.y = lerp(velocity.y, glide_velocity, delta * glide_weight) # WHY
+	else:
+		velocity.y += get_gravity() * delta
 		
 	move_and_slide(velocity, Vector2.UP) # applies overall movement
 	animationState()
