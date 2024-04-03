@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/birdguy.png-024ef3da0dc631db20006f68041b2b27.stex"
+path="res://.import/round.png-ff0e52d3b3b9655d9000282cd72babb5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetFledgling/birdguy.png"
-dest_files=[ "res://.import/birdguy.png-024ef3da0dc631db20006f68041b2b27.stex" ]
+source_file="res://Tileset/leomoon-dot-com_ies-lights-pack/ies-lights-pack/round.png"
+dest_files=[ "res://.import/round.png-ff0e52d3b3b9655d9000282cd72babb5.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
