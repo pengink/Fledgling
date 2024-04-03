@@ -1,0 +1,24 @@
+class_name health
+extends KinematicBody2D
+
+export (float) var maxhealth = 100
+onready var health = maxhealth setget _set_health
+signal update(health)
+signal dead()
+func _ready():
+	print(health)
+func damage(amount):
+	_set_health(health-amount)
+func kill():
+	pass #figure out how to teleport model to origin at some point
+func _set_health(value):
+	var prevhealth = health
+	health = clamp(value, 0, maxhealth)
+	if health != prevhealth:
+		emit_signal("update")
+		if health == 0:
+			kill()
+			emit_signal("killed")
+			print("dead")
+#make it so touching spike will send a signal that will lower health later
+#connecct this script to the main one later probably
