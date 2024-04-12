@@ -1,0 +1,16 @@
+extends Area2D
+var inportal = false
+var antiloop = false
+func _on_Area2D_body_entered(body: KinematicBody2D):
+	inportal = true
+func _on_Area2D_body_exited(body: KinematicBody2D):
+	inportal = false
+	antiloop = false
+func _process(delta):
+	if antiloop == true:
+		return
+	elif inportal == true:
+		get_tree().change_scene("res://scenes/TestWorld2.tscn")
+		antiloop = true
+		print("this should only appear once!")
+#only set up for one side right now but like you could really easy make it omnidirectional 
