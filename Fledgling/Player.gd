@@ -21,7 +21,7 @@ export var glide_velocity : float = 50.0
 
 onready var jump_velocity : float = ((-2.0 * jump_height) / time_to_peak) 
 onready var jump_gravity : float = ((2.0 * jump_height) / (time_to_peak * time_to_peak)) 
-onready var fall_gravity : float = ((2.0 * jump_height) / (time_to_descent * time_to_descent)) 
+onready var fall_gravity : float = ((2.0 * jump_height) / (time_to_descent * time_to_descent)) # rtk
 
 export var speed : int = 700
 
@@ -38,8 +38,9 @@ func _process(delta):
 			
 	if gliding:
 		velocity.y = lerp(velocity.y, glide_velocity, delta * glide_weight) # WHY
-	else:
-		velocity.y += get_gravity() * delta
+	if !is_on_floor():
+		velocity.y += get_gravity() * delta * 0.4
+		#velocity.y = lerp(velocity.y, get_gravity() * delta, 1)
 		
 	move_and_slide(velocity, Vector2.UP) # applies overall movement
 	animationState()

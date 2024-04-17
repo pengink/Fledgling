@@ -9,7 +9,7 @@
 [ext_resource path="res://Tileset/leomoon-dot-com_ies-lights-pack/ies-lights-pack/soft-display.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.3625, 8.33333 )
+extents = Vector2( 2.00417, 2.5 )
 
 [sub_resource type="VisualShaderNodeInput" id=2]
 input_name = "uv"
@@ -58,47 +58,6 @@ layer = 5
 margin_right = 1024.0
 margin_bottom = 600.0
 
-[node name="Hotbar" type="Container" parent="CanvasLayer/UI"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 6 )
-
-[node name="Slot1" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
-margin_left = -50.0
-margin_top = -150.0
-margin_right = 270.0
-margin_bottom = 170.0
-rect_scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 4 )
-
-[node name="Slot2" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
-margin_left = 50.0
-margin_top = -50.0
-margin_right = 370.0
-margin_bottom = 270.0
-rect_scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 4 )
-
-[node name="Slot3" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
-margin_left = -50.0
-margin_top = 50.0
-margin_right = 270.0
-margin_bottom = 370.0
-rect_scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 4 )
-
-[node name="Slot4" type="TextureRect" parent="CanvasLayer/UI/Hotbar"]
-margin_left = -150.0
-margin_top = -50.0
-margin_right = 170.0
-margin_bottom = 270.0
-rect_scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="CanvasLayer/UI/Hotbar"]
-
 [node name="Label" type="Label" parent="CanvasLayer/UI"]
 margin_left = 50.0
 margin_top = 50.0
@@ -107,18 +66,103 @@ margin_bottom = 64.0
 rect_scale = Vector2( 3, 3 )
 text = "5"
 
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -200.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Hotbar" type="Container" parent="CanvasLayer/AspectRatioContainer"]
+margin_right = 200.0
+margin_bottom = 200.0
+script = ExtResource( 6 )
+
+[node name="Slot1" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/Hotbar"]
+margin_left = -50.0
+margin_top = -150.0
+margin_right = 270.0
+margin_bottom = 170.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="Slot2" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/Hotbar"]
+margin_left = 50.0
+margin_top = -50.0
+margin_right = 370.0
+margin_bottom = 270.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="Slot3" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/Hotbar"]
+margin_left = -50.0
+margin_top = 50.0
+margin_right = 270.0
+margin_bottom = 370.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="Slot4" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/Hotbar"]
+margin_left = -150.0
+margin_top = -50.0
+margin_right = 170.0
+margin_bottom = 270.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/AspectRatioContainer/Hotbar"]
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 237, -357 )
+scale = Vector2( 2.00243, 1.59801 )
+texture = ExtResource( 8 )
+color = Color( 0.921569, 0.933333, 0.815686, 1 )
+energy = 1.67
+shadow_enabled = true
+shadow_color = Color( 0.0666667, 0.235294, 0.627451, 0.945098 )
+shadow_gradient_length = 300.0
+
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2( 380, 70 )
 scale = Vector2( 80, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2( -4.4, 5 )
+position = Vector2( -8.3125, -13 )
 scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor"]
-position = Vector2( -13.05, 199.5 )
-scale = Vector2( 3, 3 )
+position = Vector2( -0.775, -20 )
+scale = Vector2( 0.801, 5.707 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 2.45, -77.5 )
+scale = Vector2( 0.784, 2.616 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 0.875, -174 )
+scale = Vector2( 0.799, 3.276 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 6.4625, -110 )
+scale = Vector2( 1.186, 3.319 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 6.475, -206.5 )
+scale = Vector2( 0.786318, 3.2493 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 1.6875, -269.5 )
+scale = Vector2( 0.788, 3.249 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -143,8 +187,11 @@ script = ExtResource( 3 )
 [node name="Midground" type="TileMap" parent="."]
 position = Vector2( 1, 0 )
 tile_set = ExtResource( 5 )
+show_collision = true
+collision_use_kinematic = true
+collision_bounce = 1.0
 format = 1
-tile_data = PoolIntArray( -65543, 2, 0, 65524, 7, 0, 65525, 8, 0, 65526, 8, 0, 65527, 8, 0, 65528, 8, 0, 65529, 8, 0, 65530, 8, 0, 65531, 8, 0, 65532, 8, 0, 65533, 8, 0, 65534, 8, 0, 65535, 8, 0, 0, 8, 0, 1, 8, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 6, 8, 0, 7, 8, 0, 8, 8, 0, 9, 8, 0, 10, 8, 0, 11, 8, 0, 12, 536870919, 0 )
+tile_data = PoolIntArray( -589812, 536870920, 0, -589811, 536870920, 0, -589810, 536870920, 0, -589809, 536870920, 0, -589808, 536870920, 0, -524282, 536870920, 0, -524281, 536870920, 0, -524280, 536870920, 0, -524279, 536870920, 0, -458734, 536870920, 0, -458733, 536870920, 0, -458732, 536870920, 0, -458731, 536870920, 0, -393213, 536870920, 0, -393204, 536870920, 0, -393203, 536870920, 0, -393202, 536870920, 0, -393201, 536870920, 0, -327675, 536870920, 0, -327674, 536870920, 0, -327673, 536870920, 0, -327672, 536870920, 0, -262125, 536870920, 0, -262124, 536870920, 0, -262123, 536870920, 0, -262122, 536870920, 0, -196597, 536870920, 0, -196596, 536870920, 0, -196595, 536870920, 0, -196594, 536870920, 0, -196593, 536870920, 0, -196592, 536870920, 0, -65543, 2, 0, -131065, 536870920, 0, -131064, 536870920, 0, -131063, 536870920, 0, -131062, 536870920, 0, 65524, 7, 0, 65525, 8, 0, 65526, 8, 0, 65527, 8, 0, 65528, 8, 0, 65529, 8, 0, 65530, 8, 0, 65531, 8, 0, 65532, 8, 0, 65533, 8, 0, 65534, 8, 0, 65535, 8, 0, 0, 8, 0, 1, 8, 0, 2, 8, 0, 3, 536870926, 0, 4, 536870926, 0, 5, 536870926, 0, 6, 536870926, 0 )
 
 [node name="Background" type="TileMap" parent="."]
 z_index = -1
@@ -155,9 +202,3 @@ tile_data = PoolIntArray( -524292, 10, 0, -524291, 10, 0, -524290, 10, 0, -52428
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 378, -153 )
-
-[node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 237, -357 )
-scale = Vector2( 2.00243, 1.59801 )
-texture = ExtResource( 8 )
-shadow_enabled = true
