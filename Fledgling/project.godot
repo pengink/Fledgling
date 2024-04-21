@@ -11,7 +11,9 @@ config_version=4
 [application]
 
 config/name="Fledgling"
-run/main_scene="res://UserInterface.tscn"
+run/main_scene="res://Hotbar/UserInterface.tscn"
+config/icon="res://icon.png"
+<<<<<<<Updatedupstreamrun/main_scene="res://Main.tscn"
 
 [global]
 

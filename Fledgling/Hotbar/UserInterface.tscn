@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://HotbarController.gd" type="Script" id=1]
-[ext_resource path="res://Tileset/Holder.png" type="Texture" id=2]
+[ext_resource path="res://Hotbar/HotbarController.gd" type="Script" id=1]
 
 [node name="UserInterface" type="CanvasLayer"]
 layer = 5
@@ -28,7 +27,6 @@ margin_top = -150.0
 margin_right = 270.0
 margin_bottom = 170.0
 rect_scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 2 )
 
 [node name="Slot2" type="TextureRect" parent="AspectRatioContainer/Hotbar"]
 margin_left = 50.0
@@ -36,7 +34,6 @@ margin_top = -50.0
 margin_right = 370.0
 margin_bottom = 270.0
 rect_scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 2 )
 
 [node name="Slot3" type="TextureRect" parent="AspectRatioContainer/Hotbar"]
 margin_left = -50.0
@@ -44,7 +41,6 @@ margin_top = 50.0
 margin_right = 270.0
 margin_bottom = 370.0
 rect_scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 2 )
 
 [node name="Slot4" type="TextureRect" parent="AspectRatioContainer/Hotbar"]
 margin_left = -150.0
@@ -52,4 +48,3 @@ margin_top = -50.0
 margin_right = 170.0
 margin_bottom = 270.0
 rect_scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 2 )
