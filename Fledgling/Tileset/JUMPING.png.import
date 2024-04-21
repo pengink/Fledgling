@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_sheet_128px_by_128px.png-37767807168c9f4c81b3dee4766a1c12.stex"
+path="res://.import/JUMPING.png-02ff3604faeb841142a194ac1011ef66.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tileset/tile_sheet_128px_by_128px.png"
-dest_files=[ "res://.import/tile_sheet_128px_by_128px.png-37767807168c9f4c81b3dee4766a1c12.stex" ]
+source_file="res://Tileset/JUMPING.png"
+dest_files=[ "res://.import/JUMPING.png-02ff3604faeb841142a194ac1011ef66.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

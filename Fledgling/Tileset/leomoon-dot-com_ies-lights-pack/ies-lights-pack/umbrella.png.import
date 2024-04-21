@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_sheet_128px_by_128px.png-37767807168c9f4c81b3dee4766a1c12.stex"
+path="res://.import/umbrella.png-8f6bdfac27957ec172356b09413c0339.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tileset/tile_sheet_128px_by_128px.png"
-dest_files=[ "res://.import/tile_sheet_128px_by_128px.png-37767807168c9f4c81b3dee4766a1c12.stex" ]
+source_file="res://Tileset/leomoon-dot-com_ies-lights-pack/ies-lights-pack/umbrella.png"
+dest_files=[ "res://.import/umbrella.png-8f6bdfac27957ec172356b09413c0339.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
