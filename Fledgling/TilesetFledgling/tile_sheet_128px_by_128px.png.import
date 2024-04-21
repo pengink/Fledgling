@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/tile_sheet_128px_by_128px.png-2406d68dc9233366c876c01f00295af6.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://TilesetFledgling/tile_sheet_128px_by_128px.png"
+dest_files=[ "res://.import/tile_sheet_128px_by_128px.png-2406d68dc9233366c876c01f00295af6.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
