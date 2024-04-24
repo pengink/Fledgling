@@ -27,7 +27,6 @@ func get_range():
 			get_child(i).texture = selectedTexture;
 			#get_child(i).set_scale(Vector2(0.5, 0.5));
 			item = i;
-			print(item)
 		elif i != item:
 			get_child(i).texture = holderTexture;
 			
