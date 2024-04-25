@@ -25,6 +25,7 @@ __meta__ = {
 margin_right = 200.0
 margin_bottom = 200.0
 script = ExtResource( 2 )
+difference = 2
 
 [node name="Slot1" type="TextureRect" parent="AspectRatioContainer/Hotbar"]
 margin_left = -50.0
