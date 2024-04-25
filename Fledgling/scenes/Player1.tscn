@@ -1,7 +1,7 @@
 [gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Tileset/birdguy.png" type="Texture" id=1]
-[ext_resource path="res://Player1.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Player1.gd" type="Script" id=2]
 [ext_resource path="res://Tileset/pixilart-sprite (8) (1).png" type="Texture" id=3]
 [ext_resource path="res://Tileset/JUMPING.png" type="Texture" id=6]
 [ext_resource path="res://Tileset/GLIDING.png" type="Texture" id=7]
