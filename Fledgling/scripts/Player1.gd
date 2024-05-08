@@ -44,7 +44,6 @@ func _process(delta):
 		
 	move_and_slide(velocity, Vector2.UP) # applies overall movement
 	animationState()
-	print(self.velocity.y)
 
 	
 	
