@@ -4,37 +4,53 @@ var viewportRes : Vector2
 var blockSequence : Array
 var rng = RandomNumberGenerator.new()
 
+var boxScale : int = 4
+
+var camera : Camera2D
+
 var player : Node2D 
 
 var viewportLast : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for i in round(viewportRes.y/64.0) + 1:
-		newBlock(i)
+	viewportRes = get_viewport_rect().size
+	if viewportRes.y >= 1.0:
+		print("gg")
+		for i in round(viewportRes.y/(32*boxScale)) + 1:
+			newBlock(i)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if get_parent().get_parent().get_parent().get_parent().get_node("Player") != null: # need to direct to player
-		player = get_parent().get_parent().get_parent().get_parent().get_node("Player")
 		
 	viewportRes = get_viewport_rect().size
 	
-	if on_viewport_resized():
+	if get_parent().get_parent().get_parent().has_node("Player"):
+		camera = get_parent().get_parent().get_parent().get_node("Player").get_node("Camera2D")
+		print(camera.global_position)
+		
+	updatePosition() # return to updating position
+	
+	if on_viewport_resized() == "more":
+		newBlock(blockSequence.size() - 1)
+	elif on_viewport_resized() == "less":
 		newBlock(blockSequence.size() + 1)
+		
 	else: return
 	if player != null:
 		for i in get_children().size() && player:
-			get_child(i).offset.y += player.position.y
+			pass
 		
 
 func on_viewport_resized():
-	if abs(viewportLast.y-viewportRes.y) > 64: 
+	if abs(viewportLast.y-viewportRes.y) != 32 * boxScale: 
 		viewportLast = viewportRes
-		return true
+		return "more"
+
 		
 func newBlock(order):
 	var borderBlock = Sprite.new()
+	borderBlock.scale = Vector2(boxScale, boxScale)
 	rng.randomize()
 	var num : int = rng.randi_range(0, 5)
 	match num:
@@ -50,7 +66,13 @@ func newBlock(order):
 			borderBlock.set_texture(load("res://Tileset/borderSkull.png"));
 		5:
 			borderBlock.set_texture(load("res://Tileset/borderVines.png")); 
-	blockSequence.append(num)
+	blockSequence.append(borderBlock)
 	add_child(borderBlock)
-	borderBlock.position.x = 32
-	borderBlock.position.y = (order * 64) + 32
+	borderBlock.position.x = 32 * boxScale
+	borderBlock.position.y = (order * 64 * boxScale) + 32
+
+func updatePosition():
+	pass
+	for i in blockSequence:
+		pass
+		

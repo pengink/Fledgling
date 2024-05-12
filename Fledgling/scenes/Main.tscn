@@ -69,7 +69,6 @@ scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
 
 [node name="Control" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -114,7 +113,7 @@ texture = ExtResource( 8 )
 normal_map = ExtResource( 6 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 10, -250 )
+position = Vector2( 149, 25 )
 texture = ExtResource( 9 )
 color = Color( 0.85098, 0.858824, 0.698039, 1 )
 energy = 2.21

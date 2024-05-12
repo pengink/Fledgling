@@ -35,6 +35,7 @@ __meta__ = {
 }
 
 [node name="Hotbar" type="Container" parent="HotBarContainer"]
+margin_left = 6.10352e-05
 margin_right = 200.0
 margin_bottom = 200.0
 script = ExtResource( 2 )
