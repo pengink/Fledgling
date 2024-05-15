@@ -205,7 +205,6 @@ script = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-smoothing_enabled = true
 smoothing_speed = 3.0
 offset_v = -1.0
 
@@ -217,7 +216,7 @@ occluder = SubResource( 26 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

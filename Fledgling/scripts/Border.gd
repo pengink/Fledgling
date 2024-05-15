@@ -1,51 +1,45 @@
 extends AspectRatioContainer
 
 var viewportRes : Vector2
+
 var blockSequence : Array
 var rng = RandomNumberGenerator.new()
-
 var boxScale : int = 4
 
 var camera : Camera2D
-
 var player : Node2D 
-
 var viewportLast : Vector2
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	viewportRes = get_viewport_rect().size
-	if viewportRes.y >= 1.0:
-		print("gg")
-		for i in round(viewportRes.y/(32*boxScale)) + 1:
-			newBlock(i)
+	viewportRes = get_viewport_rect().end
+	for i in round(viewportRes.y/(32*boxScale)):
+		newBlock(i)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 		
 	viewportRes = get_viewport_rect().size
 	
-	if get_parent().get_parent().get_parent().has_node("Player"):
-		camera = get_parent().get_parent().get_parent().get_node("Player").get_node("Camera2D")
-		print(camera.global_position)
-		
-	updatePosition() # return to updating position
+	get_camera()
+	updatePosition() 
 	
-	if on_viewport_resized() == "more":
-		newBlock(blockSequence.size() - 1)
-	elif on_viewport_resized() == "less":
+	if blockSequence[0].offset.y > 32 * boxScale/2:
+		print("up")
 		newBlock(blockSequence.size() + 1)
+		print(blockSequence.size() + 1)
+	elif blockSequence[blockSequence.size()-1].offset.y > viewportRes.y: # WHAT DID YOU DO?????????
+		pass
+		print("down")
 		
-	else: return
-	if player != null:
-		for i in get_children().size() && player:
-			pass
 		
 
 func on_viewport_resized():
 	if abs(viewportLast.y-viewportRes.y) != 32 * boxScale: 
 		viewportLast = viewportRes
-		return "more"
+		print("changed")
+	#elif viewportLast.y-viewportRes
 
 		
 func newBlock(order):
@@ -66,13 +60,16 @@ func newBlock(order):
 			borderBlock.set_texture(load("res://Tileset/borderSkull.png"));
 		5:
 			borderBlock.set_texture(load("res://Tileset/borderVines.png")); 
+		
 	blockSequence.append(borderBlock)
 	add_child(borderBlock)
 	borderBlock.position.x = 32 * boxScale
 	borderBlock.position.y = (order * 64 * boxScale) + 32
 
 func updatePosition():
-	pass
-	for i in blockSequence:
-		pass
+	for block in blockSequence:
+		block.offset.y = -camera.global_position.y * 0.33
 		
+func get_camera():
+	if get_parent().get_parent().get_parent().has_node("Player"):
+		camera = get_parent().get_parent().get_parent().get_node("Player").get_node("Camera2D")
