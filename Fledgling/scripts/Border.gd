@@ -5,6 +5,7 @@ var viewportRes : Vector2
 var blockSequence : Array
 var rng = RandomNumberGenerator.new()
 var boxScale : int = 4
+var newBlock
 
 var camera : Camera2D
 var player : Node2D 
@@ -15,7 +16,10 @@ var viewportLast : Vector2
 func _ready():
 	viewportRes = get_viewport_rect().end
 	for i in round(viewportRes.y/(32*boxScale)):
-		newBlock(i)
+		blockSequence.append(newBlock())
+		newBlock = blockSequence[i]
+		add_child(newBlock)
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -23,17 +27,18 @@ func _physics_process(delta):
 	viewportRes = get_viewport_rect().size
 	
 	get_camera()
-	updatePosition() 
 	
-	if blockSequence[0].offset.y > 32 * boxScale/2:
-		print("up")
-		newBlock(blockSequence.size() + 1)
-		print(blockSequence.size() + 1)
-	elif blockSequence[blockSequence.size()-1].offset.y > viewportRes.y: # WHAT DID YOU DO?????????
-		pass
+	if blockSequence[1].offset.y > 32 * boxScale/2:
+		blockSequence.push_front(newBlock())
+		newBlock = blockSequence[0]
+		add_child(newBlock)
+		
+	elif blockSequence[-1].offset.y > viewportRes.y: # WHAT DID YOU DO?????????
+		blockSequence.append(newBlock())
 		print("down")
 		
-		
+	updatePosition() 
+				
 
 func on_viewport_resized():
 	if abs(viewportLast.y-viewportRes.y) != 32 * boxScale: 
@@ -42,7 +47,9 @@ func on_viewport_resized():
 	#elif viewportLast.y-viewportRes
 
 		
-func newBlock(order):
+	
+		
+func newBlock():
 	var borderBlock = Sprite.new()
 	borderBlock.scale = Vector2(boxScale, boxScale)
 	rng.randomize()
@@ -60,15 +67,12 @@ func newBlock(order):
 			borderBlock.set_texture(load("res://Tileset/borderSkull.png"));
 		5:
 			borderBlock.set_texture(load("res://Tileset/borderVines.png")); 
-		
-	blockSequence.append(borderBlock)
-	add_child(borderBlock)
-	borderBlock.position.x = 32 * boxScale
-	borderBlock.position.y = (order * 64 * boxScale) + 32
+
 
 func updatePosition():
 	for block in blockSequence:
-		block.offset.y = -camera.global_position.y * 0.33
+		block.offset.y = (64) + 32
+		block.offset.y = -camera.global_position.y/3
 		
 func get_camera():
 	if get_parent().get_parent().get_parent().has_node("Player"):
