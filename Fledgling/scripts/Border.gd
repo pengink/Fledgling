@@ -15,7 +15,7 @@ var viewportLast : Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	viewportRes = get_viewport_rect().end
-	for i in round(viewportRes.y/(32*boxScale)):
+	for i in round(viewportRes.y/(64*boxScale)):
 		blockSequence.append(newBlock())
 		newBlock = blockSequence[i]
 		add_child(newBlock)
@@ -28,14 +28,17 @@ func _physics_process(delta):
 	
 	get_camera()
 	
-	if blockSequence[1].offset.y > 32 * boxScale/2:
+	if blockSequence[0].position.y < 256:
 		blockSequence.push_front(newBlock())
+		blockSequence.pop_back()
 		newBlock = blockSequence[0]
 		add_child(newBlock)
 		
-	elif blockSequence[-1].offset.y > viewportRes.y: # WHAT DID YOU DO?????????
-		blockSequence.append(newBlock())
-		print("down")
+	elif blockSequence[-1].position.y > viewportRes.y: # WHAT DID YOU DO?????????
+		blockSequence.push_back(newBlock())
+		blockSequence.pop_front()
+		newBlock = blockSequence[-1]
+		add_child(newBlock)
 		
 	updatePosition() 
 				
@@ -44,10 +47,7 @@ func on_viewport_resized():
 	if abs(viewportLast.y-viewportRes.y) != 32 * boxScale: 
 		viewportLast = viewportRes
 		print("changed")
-	#elif viewportLast.y-viewportRes
 
-		
-	
 		
 func newBlock():
 	var borderBlock = Sprite.new()
@@ -67,12 +67,15 @@ func newBlock():
 			borderBlock.set_texture(load("res://Tileset/borderSkull.png"));
 		5:
 			borderBlock.set_texture(load("res://Tileset/borderVines.png")); 
+	return borderBlock
 
 
 func updatePosition():
+	var i = 0
 	for block in blockSequence:
-		block.offset.y = (64) + 32
-		block.offset.y = -camera.global_position.y/3
+		block.position.y = (64 * i * boxScale) + 32
+		block.position.y -= camera.global_position.y/3
+		i += 1
 		
 func get_camera():
 	if get_parent().get_parent().get_parent().has_node("Player"):
