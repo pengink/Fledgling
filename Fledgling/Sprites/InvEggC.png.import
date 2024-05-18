@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/InvEggC.png-c078316bff24af3e5e8a373fecaf818a.stex"
+path="res://.import/InvEggC.png-9f4eb243b9b0ea28f5ef93e18171b70c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/InvEggC.png"
-dest_files=[ "res://.import/InvEggC.png-c078316bff24af3e5e8a373fecaf818a.stex" ]
+source_file="res://sprites/InvEggC.png"
+dest_files=[ "res://.import/InvEggC.png-9f4eb243b9b0ea28f5ef93e18171b70c.stex" ]
 
 [params]
 

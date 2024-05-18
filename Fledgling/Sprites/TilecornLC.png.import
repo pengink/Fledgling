@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TilecornLC.png-0a7ee8a73e81af305d36b6ef0285c8af.stex"
+path="res://.import/TilecornLC.png-dd5494f06fd251f34dafe111a1443312.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/TilecornLC.png"
-dest_files=[ "res://.import/TilecornLC.png-0a7ee8a73e81af305d36b6ef0285c8af.stex" ]
+source_file="res://sprites/TilecornLC.png"
+dest_files=[ "res://.import/TilecornLC.png-dd5494f06fd251f34dafe111a1443312.stex" ]
 
 [params]
 

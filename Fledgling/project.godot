@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Fledgling"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/worldfinaltestreal (1).tscn"
 boot_splash/image="res://shoebox.png"
 config/icon="res://sprites/icon.png"
 <<<<<<<Updatedupstreamrun/main_scene="res://Main.tscn"
@@ -19,7 +19,7 @@ config/icon="res://sprites/icon.png"
 
 [display]
 
-window/stretch/mode="2d"
+window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
 [global]

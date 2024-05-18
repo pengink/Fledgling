@@ -37,10 +37,9 @@ func _process(delta):
 			glide()
 			
 	if gliding:
-		velocity.y = lerp(velocity.y, glide_velocity, delta * glide_weight) # WHY
+		velocity.y = lerp(velocity.y, glide_velocity, delta * glide_weight) # when changed to a gliding state, interpolates between the current velocity to gliding velocity
 	if !is_on_floor():
 		velocity.y += get_gravity() * delta * 0.4
-		#velocity.y = lerp(velocity.y, get_gravity() * delta, 1)
 		
 	move_and_slide(velocity, Vector2.UP) # applies overall movement
 	animationState()

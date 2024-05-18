@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BallrusballC.png-99761fb689604e9173de52a7357471a8.stex"
+path="res://.import/BallrusballC.png-5ebf158ad39d7eb8ccda93601971acb1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/BallrusballC.png"
-dest_files=[ "res://.import/BallrusballC.png-99761fb689604e9173de52a7357471a8.stex" ]
+source_file="res://sprites/BallrusballC.png"
+dest_files=[ "res://.import/BallrusballC.png-5ebf158ad39d7eb8ccda93601971acb1.stex" ]
 
 [params]
 
