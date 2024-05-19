@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BSkullC.png-8a225ce01f7c624c0f3eff50e0e87320.stex"
+path="res://.import/BSkullC.png-15d89536976df3bec3af2634bd4d3bca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/BSkullC.png"
-dest_files=[ "res://.import/BSkullC.png-8a225ce01f7c624c0f3eff50e0e87320.stex" ]
+source_file="res://sprites/BSkullC.png"
+dest_files=[ "res://.import/BSkullC.png-15d89536976df3bec3af2634bd4d3bca.stex" ]
 
 [params]
 

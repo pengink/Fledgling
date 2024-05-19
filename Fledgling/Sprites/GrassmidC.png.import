@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GrassmidC.png-686059f88661083bd682b38c56a42eeb.stex"
+path="res://.import/GrassmidC.png-950dbb1a720ea29566d0d7062ad474ce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/GrassmidC.png"
-dest_files=[ "res://.import/GrassmidC.png-686059f88661083bd682b38c56a42eeb.stex" ]
+source_file="res://sprites/GrassmidC.png"
+dest_files=[ "res://.import/GrassmidC.png-950dbb1a720ea29566d0d7062ad474ce.stex" ]
 
 [params]
 

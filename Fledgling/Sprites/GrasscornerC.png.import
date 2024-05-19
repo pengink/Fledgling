@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GrasscornerC.png-f622e4f19448319b7bcdb16045d3945d.stex"
+path="res://.import/GrasscornerC.png-bd33ba4d01f7183b161dd790e2097893.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/GrasscornerC.png"
-dest_files=[ "res://.import/GrasscornerC.png-f622e4f19448319b7bcdb16045d3945d.stex" ]
+source_file="res://sprites/GrasscornerC.png"
+dest_files=[ "res://.import/GrasscornerC.png-bd33ba4d01f7183b161dd790e2097893.stex" ]
 
 [params]
 

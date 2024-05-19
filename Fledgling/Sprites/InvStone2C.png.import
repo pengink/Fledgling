@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/InvStone2C.png-22b0280b9d63b96e6a754d7f605f18a4.stex"
+path="res://.import/InvStone2C.png-448ca2c4a0675f0334d92650a6da5b28.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/InvStone2C.png"
-dest_files=[ "res://.import/InvStone2C.png-22b0280b9d63b96e6a754d7f605f18a4.stex" ]
+source_file="res://sprites/InvStone2C.png"
+dest_files=[ "res://.import/InvStone2C.png-448ca2c4a0675f0334d92650a6da5b28.stex" ]
 
 [params]
 
