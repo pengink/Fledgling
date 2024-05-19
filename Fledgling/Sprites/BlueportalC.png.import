@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BlueportalC.png-67d14ea030cf11bc972554270e5fb9bf.stex"
+path="res://.import/BlueportalC.png-5cde69ac14993948f422ef9041660cea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/BlueportalC.png"
-dest_files=[ "res://.import/BlueportalC.png-67d14ea030cf11bc972554270e5fb9bf.stex" ]
+source_file="res://Sprites/BlueportalC.png"
+dest_files=[ "res://.import/BlueportalC.png-5cde69ac14993948f422ef9041660cea.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/OrangeportalC.png-fd7e93c844c42ccd459d092a76f64c5a.stex"
+path="res://.import/OrangeportalC.png-359237eade1cadc399225b846ee18bab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/OrangeportalC.png"
-dest_files=[ "res://.import/OrangeportalC.png-fd7e93c844c42ccd459d092a76f64c5a.stex" ]
+source_file="res://Sprites/OrangeportalC.png"
+dest_files=[ "res://.import/OrangeportalC.png-359237eade1cadc399225b846ee18bab.stex" ]
 
 [params]
 

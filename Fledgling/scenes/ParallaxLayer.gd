@@ -8,7 +8,7 @@ extends ParallaxLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	match randi() % 4:
+	match randi() % 3:
 		0:
 			get_node("Map").set_texture(load("res://Tileset/map.png"))
 		1:

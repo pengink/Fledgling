@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BWingboneC.png-0cf4a400c91ec28793d89e5cef849c64.stex"
+path="res://.import/BWingboneC.png-ac0a9c60f660755b36982b096bd720ba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/BWingboneC.png"
-dest_files=[ "res://.import/BWingboneC.png-0cf4a400c91ec28793d89e5cef849c64.stex" ]
+source_file="res://Sprites/BWingboneC.png"
+dest_files=[ "res://.import/BWingboneC.png-ac0a9c60f660755b36982b096bd720ba.stex" ]
 
 [params]
 

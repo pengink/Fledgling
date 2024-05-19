@@ -29,3 +29,5 @@ func _on_Confetti_animation_finished():
 
 func _on_AudioStreamPlayer2D_finished():
 	get_node("AudioStreamPlayer2D").queue_free()
+	get_tree().reload_current_scene()
+

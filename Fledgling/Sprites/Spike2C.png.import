@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Spike2C.png-c524d20010cd30117a97dbc3bff53217.stex"
+path="res://.import/Spike2C.png-f6bdc942009d2319bd643aa2abfd1e8d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Spike2C.png"
-dest_files=[ "res://.import/Spike2C.png-c524d20010cd30117a97dbc3bff53217.stex" ]
+source_file="res://Sprites/Spike2C.png"
+dest_files=[ "res://.import/Spike2C.png-f6bdc942009d2319bd643aa2abfd1e8d.stex" ]
 
 [params]
 

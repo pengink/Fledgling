@@ -17,3 +17,4 @@ func _on_SoundArea_body_entered(body):
 	if body.name == "Player":
 		get_node("AudioStreamPlayer2D").play(0.0)
 	print(body.name)
+

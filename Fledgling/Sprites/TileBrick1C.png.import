@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TileBrick1C.png-d9caa7d382320324870b8ac5d11ebc1f.stex"
+path="res://.import/TileBrick1C.png-f2a085a68f6cb12cd0c84fa5990315bc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/TileBrick1C.png"
-dest_files=[ "res://.import/TileBrick1C.png-d9caa7d382320324870b8ac5d11ebc1f.stex" ]
+source_file="res://Sprites/TileBrick1C.png"
+dest_files=[ "res://.import/TileBrick1C.png-f2a085a68f6cb12cd0c84fa5990315bc.stex" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://TestWorld2.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Player1.tscn" type="PackedScene" id=2]
@@ -9,6 +9,25 @@
 [ext_resource path="res://scenes/Border.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Pickup.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Yummers.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/rip.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 39.8507, 53.9064 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16.3812, 52.3 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 148, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 9.11387, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 24.4954, 26.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 351.58, 31.75 )
 
 [node name="worldfinaltestreal" type="Node2D"]
 
@@ -65,6 +84,47 @@ position = Vector2( 737, -160 )
 [node name="SoundArea" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1178, -32 )
 scale = Vector2( 33.6747, -1.78082 )
+
+[node name="rip" type="Area2D" parent="."]
+scale = Vector2( 0.96611, 1 )
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="rip"]
+position = Vector2( 822.888, -577.5 )
+rotation = -3.14159
+scale = Vector2( 0.649087, 0.918258 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="rip"]
+position = Vector2( 892.51, -1257 )
+scale = Vector2( 1.40671, -0.453217 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="rip"]
+position = Vector2( 1221.39, -1309 )
+scale = Vector2( 1.40671, -0.453217 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="rip"]
+position = Vector2( 695.573, -1632 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rip"]
+position = Vector2( 1086.99, -947 )
+rotation = 3.14159
+scale = Vector2( 1.00501, -1 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="rip"]
+position = Vector2( 1016.79, -1571.5 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="rip"]
+position = Vector2( 1226.57, -21.25 )
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="rip" to="rip" method="_on_rip_body_entered"]
 
 [editable path="BorderL"]
 [editable path="BorderR"]

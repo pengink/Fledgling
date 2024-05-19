@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TilewcornRC.png-8ed506165dcbd14f74bd262537be9932.stex"
+path="res://.import/TilewcornRC.png-9ba79a59d00c081c28363a5137a273be.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/TilewcornRC.png"
-dest_files=[ "res://.import/TilewcornRC.png-8ed506165dcbd14f74bd262537be9932.stex" ]
+source_file="res://Sprites/TilewcornRC.png"
+dest_files=[ "res://.import/TilewcornRC.png-9ba79a59d00c081c28363a5137a273be.stex" ]
 
 [params]
 
